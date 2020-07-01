@@ -1,12 +1,10 @@
 import * as express from 'express';
-import { Message } from '@my-amazon/api-interfaces';
+import { data } from '@my-amazon/api-interfaces';
 
 const app = express();
 
-const greeting: Message = { message: 'Welcome to api!' };
-
-app.get('/api', (req, res) => {
-  res.send(greeting);
+app.get('/api/products', (req, res) => {
+  res.send(data.products);
 });
 
 const port = process.env.port || 3333;
